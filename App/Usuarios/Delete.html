@@ -1,0 +1,72 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Contatos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="../JS/config.js"></script>
+    <script src="../JS/Util.js"></script>
+    <script src="../JS/Usuarios.js"></script>
+</head>
+
+<body>
+<div class="row col-md-12">
+    <div data-include="../Shared/Header.html"></div>
+</div>
+<div class="row col-md-12">
+    <div class="col-md-2">
+        <div data-include="../Shared/Menu.html"></div>
+    </div>
+    <div class="col-md-10">
+        <div class="d-flex">
+            <div class="content p-4" style="flex-grow: 1;">
+                <!--Conteúdo aq-->
+                <h1>Confirmar Exclusão</h1>
+
+                <h3>Tem certeza que deseja excluir este Usuário?</h3>
+                <div id="DeleteUserInf">
+                    <input type="hidden" id="Id"/>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Nome">Nome:</label>
+                            <input type="text" class="form-control" id="Nome" name="Nome" disabled="true" />
+                            <span id="error-Nome" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="Login">Login:</label>
+                            <input type="text" class="form-control" id="Login" name="Login" disabled="true" />
+                            <span id="error-Login" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- Telefone e Email lado a lado -->
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="Telefone">Telefone:</label>
+                            <input type="text" class="form-control" id="Telefone" name="Telefone" disabled="true"/>
+                            <span id="error-Telefone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-7">
+                            <label for="Email">Email:</label>
+                            <input type="email" class="form-control" id="Email" name="Email" disabled="true" />
+                            <span id="error-Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="IdDel" />
+                        <a href="Index.html" class="btn btn-secondary">Cancelar</a>
+                    <button type="button" class="btn btn-danger" onclick="Delete()">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<script src="../JS/Script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="../JS/Mask.js"></script>
+<script>GetOne()</script>

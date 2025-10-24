@@ -1,0 +1,69 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Novo Usuário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="../JS/config.js"></script>
+    <script src="../JS/Util.js"></script>
+    <script src="../JS/Usuarios.js"></script>
+</head>
+
+<body>
+    <div class="row col-md-12">
+        <div data-include="../Shared/Header.html"></div>
+    </div>
+
+    <div class="row col-md-12">
+        <div class="col-md-2">
+            <div data-include="../Shared/Menu.html"></div>
+        </div>
+
+        <div class="col-md-10">
+            <h1>Editar Usuário</h1>
+            <div class="row">
+                <!-- Formulário -->
+                <form onsubmit="return ValidateSubmit(event, 'edit')" class="ml-3 mt-3">
+                    <input type="hidden" id="Usuario_id"/>
+                    <!-- Nome e Login lado a lado -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="Nome">Nome:</label>
+                            <input type="text" class="form-control" id="Nome" name="Nome" required />
+                            <span id="error-Nome" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="Login">Login:</label>
+                            <input type="text" class="form-control" id="Login" name="Login" required />
+                            <span id="error-Login" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- Telefone e Email lado a lado -->
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="Telefone">Telefone:</label>
+                            <input type="text" class="form-control" id="Telefone" name="Telefone" oninput="formatTelefone(this)" />
+                            <span id="error-Telefone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-7">
+                            <label for="Email">Email:</label>
+                            <input type="email" class="form-control" id="Email" name="Email" required />
+                            <span id="error-Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <a href="Index.html" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="../JS/Mask.js"></script>
+
+    <!-- Ícones do Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+<script>GetOne()</script>

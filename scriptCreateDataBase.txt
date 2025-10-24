@@ -1,0 +1,35 @@
+CREATE TABLE contatos (
+    "Id" SERIAL PRIMARY KEY, -- autonumerador
+
+    "Nome" VARCHAR(40) NOT NULL,
+    "Apelido" VARCHAR(40),
+
+    "CPF" VARCHAR(14) NOT NULL,
+
+    "Telefone" VARCHAR(15) NOT NULL,
+
+    "Email" VARCHAR(50) NOT NULL,
+
+    "DataCadastro" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "UltimaAlteracao" TIMESTAMP
+);
+
+CREATE TABLE usuarios(
+	"Usuario_id" SERIAL PRIMARY KEY,
+	"Nome" varchar(255) NOT NULL,
+	"Email" varchar(345) UNIQUE NOT NULL,
+	"Status" boolean NOT NULL,
+	"Senha" varchar(100) NOT NULL,
+	"Telefone" varchar(13) NULL,
+	"Login" varchar(30) UNIQUE NOT NULL,
+	"DataCadastro" TIMESTAMP NOT NULL DEFAULT NOW(),
+	"DataRedefinirSenha" TIMESTAMP NULL, --Data do pedido de troca de senha
+	"RedefinirSenha_id" UUID NULL,
+	"TokenAcesso" varchar(255) NULL);
+	
+	
+	
+insert into usuarios(
+	"Nome","Email","Senha","Login","Status"
+)
+VALUES('ADMIN','admin@agenda.com','1234','admin@agenda.com',true)
